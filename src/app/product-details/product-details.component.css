@@ -1,0 +1,24 @@
+.details-form {
+    width: 40%;
+    margin-bottom: 1em;
+}
+
+.details-field {
+    width: 100%;
+}
+
+.details-navigation {
+    float: right;
+}
+
+.details-textarea {
+    min-height: 5em;
+}
+
+.details-button {
+    margin-inline-end: 0.5em;
+}
+
+.stars {
+    font-size:  small;
+}

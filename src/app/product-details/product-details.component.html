@@ -1,0 +1,39 @@
+<h2>Product Details</h2>
+
+<form class="details-form">
+  <mat-form-field appearance="outline" class="details-field">
+    <mat-label>Name</mat-label>
+    <input matInput #input placeholder="Name" [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="details-field">
+    <mat-label>Type</mat-label>
+    <mat-select [(value)]="product.type">
+      <mat-option *ngFor="let item of typeSelectOptions" [value]="productType[item]">{{item}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="details-field">
+    <mat-label>Description</mat-label>
+    <textarea matInput placeholder="Description" class="details-textarea"[(ngModel)]="product.description"
+      [ngModelOptions]="{standalone: true}"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="details-field">
+    <mat-label>Price</mat-label>
+    <input matInput type="number" placeholder="Price" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+
+  <div class="stars">
+    <label for="stars">Stars</label>
+    <app-rating id="stars" [maxRating]="5" [(actRating)]="product.stars">
+    </app-rating>
+  </div>
+
+  <div class="details-navigation"> 
+    <button mat-raised-button color="warn" (click)="onDelete()" class="details-button">Delete</button>
+    <button mat-raised-button color="primary" (click)="onSave()" class="details-button">Save</button>
+    <button mat-raised-button color="basic" (click)="onCancel()">Cancel</button>
+  </div>
+</form>
+

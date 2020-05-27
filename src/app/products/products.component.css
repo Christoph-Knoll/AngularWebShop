@@ -1,0 +1,15 @@
+.flexId {
+    flex: 0 0 5%;
+}
+
+.flexDescription {
+    flex: 0 0 50%;
+}
+
+.center-elem {
+    justify-content: center;
+}
+
+.center {
+  margin: 101em auto;
+}

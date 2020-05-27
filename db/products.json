@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Hallo",
+      "type": "Smartwatch",
+      "description": "ABCDEFG",
+      "price": 83838.343,
+      "stars": 5
+    },
+    {
+      "id": 3,
+      "name": "asdf",
+      "type": "Smartphone",
+      "description": "asdfasdf",
+      "price": 1000,
+      "stars": 2
+    },
+    {
+      "id": 4,
+      "name": "",
+      "type": "Tablet",
+      "description": "",
+      "price": 0,
+      "stars": 0
+    },
+    {
+      "id": 5,
+      "name": "asdfasdf",
+      "type": "Smartphone",
+      "description": "das.kfkajhsdkfj",
+      "price": 0,
+      "stars": 4
+    },
+    {
+      "id": 6,
+      "name": "",
+      "type": "Smartphone",
+      "description": "",
+      "price": 0,
+      "stars": 0
+    }
+  ],
+  "producttypes": [
+    {
+      "type": "Smartphone"
+    },
+    {
+      "type": "Smartwatch"
+    },
+    {
+      "type": "Tablet"
+    }
+  ]
+}

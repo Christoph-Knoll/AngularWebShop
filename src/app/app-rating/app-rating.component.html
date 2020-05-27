@@ -1,0 +1,6 @@
+<div class="app-rating-div" [ngClass]="mute ? 'unselectable mute' :''">
+    <span class="unselectable" *ngFor="let n of ratingItems">
+      <mat-icon [ngClass]=" n <= this.actRating ? '':'material-icons-outlined' "
+      (click)="onClick(n)">grade</mat-icon>
+    </span>
+</div>

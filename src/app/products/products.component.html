@@ -1,0 +1,52 @@
+<h2>Products</h2>
+
+<button mat-raised-button color="primary" (click)="onCreate()">Create</button>
+
+<p></p>
+
+
+<mat-spinner *ngIf="products == undefined" class="center"></mat-spinner>
+
+
+<mat-table [dataSource]="products" *ngIf="products != undefined" class="unselectable">
+    <ng-container matColumnDef="Id">
+        <mat-header-cell *matHeaderCellDef class="flexId"> Id </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="flexId"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Type">
+        <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+           {{element.type}}
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <a [routerLink]="element.id">{{element.name}}</a>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+        <mat-header-cell *matHeaderCellDef class="flexDescription"> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="flexDescription"> {{element.description}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Stars">
+        <mat-header-cell *matHeaderCellDef class="center-elem"> Stars </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="center-elem">
+            <app-rating style="align-self: center;" [maxRating]="5" [actRating]="element.stars" [mute]="true">
+            </app-rating>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
