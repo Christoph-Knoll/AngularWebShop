@@ -8,7 +8,9 @@ import { IItem } from '../contracts/item';
 export class GenericApiService<T extends IItem> {
   urlRoot = ''
 
-  constructor(protected  httpClient: HttpClient) { }
+  constructor(protected  httpClient: HttpClient, urlRoot: String) {
+      this.urlRoot
+   }
 
     getItems(): Promise<T[]> {
       return this.httpClient.get<T[]>(this.urlRoot).toPromise()

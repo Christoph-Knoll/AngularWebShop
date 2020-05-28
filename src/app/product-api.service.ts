@@ -7,9 +7,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductApiService extends GenericApiService<IProduct>{
-  urlRoot = "http://localhost:3400/products"  
+  urlRoot = "http://localhost:3400/products" 
 
   constructor(protected httpClient: HttpClient){
     super(httpClient)
+
   }
 }
