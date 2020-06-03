@@ -11,6 +11,5 @@ export class ProductApiService extends GenericApiService<IProduct>{
 
   constructor(protected httpClient: HttpClient){
     super(httpClient)
-
   }
 }

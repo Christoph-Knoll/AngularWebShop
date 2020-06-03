@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { ProductApiService } from '../product-api.service';
 import { IProduct } from '../contracts/product';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, AfterViewInit {
 
 //#region Fields
-  products: IProduct[] = undefined
+  products$: Observable<IProduct[]>
+  loaded: boolean
 
   displayedColumns = ['Id', 'Name', 'Type', 'Description', 'Price', 'Stars']
   resultsLength = 3
@@ -20,17 +22,16 @@ export class ProductsComponent implements OnInit {
   //#region Constructor
   constructor(private productService: ProductApiService, private router: Router) {
   }
-
+  
   ngOnInit(): void {
-    this.loadProducts()
   }
-  //#endregion
+  ngAfterViewInit(): void {
+      this.products$ = this.productService.getItems()
+      this.products$.subscribe(
+        () => this.loaded = true
+      )
+  }
 
-  //#region CRUD
-  async loadProducts() {
-    this.products = await this.productService.getItems()
-    console.log(this.products)
-  }
   //#endregion
 
   //#region Methods

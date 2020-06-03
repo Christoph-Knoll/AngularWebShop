@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductApiService } from '../product-api.service';
 import { IProduct } from '../contracts/product';
@@ -14,7 +14,7 @@ export class ProductDetailsComponent implements OnInit {
   id: number
   product: IProduct
   constructor(private route: ActivatedRoute, private router: Router , private productService: ProductApiService) { }
-
+  
   productType = ProductType
   typeSelectOptions = [];
 
@@ -29,7 +29,7 @@ export class ProductDetailsComponent implements OnInit {
     if (this.id === 0) {
       this.product = {id: 0, name: "", type: ProductType.Smartphone, description: "", price: 0, stars: 0}
     } else {
-      this.product = await this.productService.getItemById(this.id)
+      this.product = await this.productService.getItemById(this.id).toPromise()
     }
   }
 

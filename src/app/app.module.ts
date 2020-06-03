@@ -24,6 +24,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AppComponent,
     AppRatingComponent,
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    DeleteProductComponent
   ],
   imports: [
     BrowserModule,

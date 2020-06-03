@@ -5,10 +5,10 @@
 <p></p>
 
 
-<mat-spinner *ngIf="products == undefined" class="center"></mat-spinner>
+<mat-spinner *ngIf="!loaded" class="center"></mat-spinner>
 
 
-<mat-table [dataSource]="products" *ngIf="products != undefined" class="unselectable">
+<mat-table [dataSource]="products$ | async" *ngIf="loaded" class="unselectable">
     <ng-container matColumnDef="Id">
         <mat-header-cell *matHeaderCellDef class="flexId"> Id </mat-header-cell>
         <mat-cell *matCellDef="let element" class="flexId"> {{element.id}} </mat-cell>
