@@ -17,28 +17,12 @@
       "stars": 4
     },
     {
-      "id": 3,
-      "name": "Apple Watch Series 2 Edelstahl 38mm silber",
-      "description": "Gehäusematerial: Edelstahl, Keramik - Armbandmaterial: Leder - Display: 340x272, OLED, kapazitiver Touchscreen, druckempfindlich, Saphirglas - OS: Watch OS - CPU: 2x 780MHz (Apple S2) - Schnittstellen: Bluetooth 4.0, WLAN 802.11b/g/n",
-      "price": 758.38,
-      "type": "Smartwatch",
-      "stars": 3
-    },
-    {
       "id": 4,
       "name": "Samsung Galaxy Tab Active T365 16GB",
       "description": "CPU: Qualcomm Snapdragon 400 (MSM8926), 4x 1.20GHz (ARM Cortex-A7) - RAM: 1.5GB - Speicher: 16GB Flash (eMMC) - Grafik: Adreno 305 (IGP) - Display: 8, 1280x800, 189dpi, Multi-Touch, Digitizer - Anschlüsse: 1x USB 2.0 Micro-B",
       "price": 470.5,
       "type": "Smartwatch",
       "stars": 4
-    },
-    {
-      "id": 5,
-      "name": "TestPhone",
-      "type": "Smartphone",
-      "description": "This is a TestPhone",
-      "price": 1234.23,
-      "stars": 5
     }
   ],
   "producttypes": [

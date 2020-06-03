@@ -5,24 +5,21 @@ import { IProduct } from '../contracts/product';
 import { ProductType } from '../contracts/product-type'
 
 @Component({
-  selector: 'app-product-details',
-  templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+  selector: 'app-product-delete',
+  templateUrl: './product-delete.component.html',
+  styleUrls: ['./product-delete.component.css']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDeleteComponent implements OnInit {
 
   id: number
   product: IProduct
   constructor(private route: ActivatedRoute, private router: Router , private productService: ProductApiService) { }
   
-  productType = ProductType
-  typeSelectOptions = [];
-
+  
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(map => this.id = parseInt(map.get('id'), 10))
     this.loadProduct()
-    this.typeSelectOptions = Object.keys(this.productType)
   }
 
   async loadProduct(){
@@ -33,16 +30,12 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
 
-  async onSave() {
-    if (this.product.id === 0) {
-      await this.productService.postItem(this.product)
-    } else {
-      await this.productService.putItem(this.product)
-    }    
-    this.onCancel()
-  }
-
   async onCancel(){
     this.router.navigate(['products'])
+  }
+
+  async onDelete() {
+    await this.productService.deleteItem(this.product).toPromise()
+    this.onCancel()
   }
 }

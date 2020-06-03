@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit, AfterViewInit {
   products$: Observable<IProduct[]>
   loaded: boolean
 
-  displayedColumns = ['Id', 'Name', 'Type', 'Description', 'Price', 'Stars']
+  displayedColumns = ['Id', 'Name', 'Type', 'Description', 'Price', 'Stars', 'Delete']
   resultsLength = 3
 //#endregion
 

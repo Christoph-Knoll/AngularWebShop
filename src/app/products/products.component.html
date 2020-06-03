@@ -46,6 +46,13 @@
         </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="Delete">
+        <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button [routerLink]="['/products/delete/' + element.id]" mat-button color="warn">Delete</button>
+        </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>

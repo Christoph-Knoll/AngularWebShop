@@ -1,0 +1,34 @@
+<h2>Delete Product</h2>
+
+<div class="delete-form">
+    <mat-list role="list">
+        <mat-list-item>
+            <p>{{product.id}}</p>
+        </mat-list-item>
+    
+        <mat-list-item>
+            <p>{{product.type}}</p>
+        </mat-list-item>
+    
+        <mat-list-item>
+            <p>{{product.name}}</p>
+        </mat-list-item>
+    
+        <mat-list-item>
+            <p>{{product.description}}</p>
+        </mat-list-item>
+    
+        <mat-list-item>
+            <p>{{product.price}}</p>
+        </mat-list-item>
+    
+        <mat-list-item>
+            <app-rating style="align-self: center;" [maxRating]="5" [actRating]="product.stars" [mute]="true">
+            </app-rating>
+        </mat-list-item>
+    </mat-list>
+    <div class="delete-navigation"> 
+        <button mat-raised-button color="warn" *ngIf="id != 0" (click)="onDelete()" class="delete-button">Delete</button>
+        <button mat-raised-button color="basic" (click)="onCancel()">Cancel</button>
+    </div>
+</div>

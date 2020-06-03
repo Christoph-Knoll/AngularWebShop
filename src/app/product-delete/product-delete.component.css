@@ -1,0 +1,20 @@
+
+.delete-field {
+    width: 100%;
+}
+
+.delete-navigation {
+    float: right;
+}
+
+.delete-textarea {
+    min-height: 5em;
+}
+
+.delete-button {
+    margin-inline-end: 0.5em;
+}
+
+.stars {
+    font-size:  small;
+}
